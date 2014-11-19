@@ -21,7 +21,7 @@ abstract public class MODFileShortBase extends MODFileBase<GeoShort> {
 		for(int i=0;i<offsetx;i++){
 			for(int j=0;j<offsety;j++){
 				idx=(startx+i)+(starty+j)*width;
-				sData[idx]=new GeoShort(startx+i,starty+j,data[idx]);
+				sData[i+offsetx*j]=new GeoShort(startx+i,starty+j,data[idx]);
 			}
 		}
 		return sData;

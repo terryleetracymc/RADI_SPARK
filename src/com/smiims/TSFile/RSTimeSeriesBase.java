@@ -18,16 +18,16 @@ abstract public class RSTimeSeriesBase<T> implements TSSparkOperation<T> {
 	// 默认以系统排列的顺序列出文件列表
 	public ArrayList<String> getSquencePath(String path) {
 		File file = new File(path);
+		ArrayList<String> fList = new ArrayList<String>();
 		if (file.isDirectory()) {
 			String[] files = file.list();
-			ArrayList<String> fList = new ArrayList<String>();
 			for (int i = 0; i < files.length; i++) {
 				fList.add(files[i]);
 			}
 			return fList;
 		} else {
 			System.err.println("you select a invalid path to process...");
-			return null;
+			return fList;
 		}
 	}
 }
