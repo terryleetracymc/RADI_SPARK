@@ -7,13 +7,13 @@ import ncsa.hdf.object.FileFormat;
 import ncsa.hdf.object.Group;
 
 public class MOD13_b0 extends MODFileShortBase {
-	
-	public MOD13_b0(String filePath,int w,int h,int b) {
-		path=filePath;
-		width=w;
-		height=h;
-		bandNO=b;
-		data=readBandSigned(path, b);
+
+	public MOD13_b0(String filePath, int w, int h) {
+		path = filePath;
+		width = w;
+		height = h;
+		bandNO = 0;
+		data = readBandSigned(path, 0);
 	}
 
 	@Override

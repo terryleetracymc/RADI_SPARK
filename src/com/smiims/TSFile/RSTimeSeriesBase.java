@@ -5,13 +5,12 @@ import java.util.ArrayList;
 
 import com.smiims.iterface.TSSparkOperation;
 
-abstract public class RSTimeSeriesBase<T> implements TSSparkOperation<T>{
+abstract public class RSTimeSeriesBase<T> implements TSSparkOperation<T> {
 	// 根文件路径
 	String rootPath;
 	// 顺序文件列表
 	ArrayList<String> sequenceFiles;
-	// 时间维度信息
-	int rank;
+
 	public ArrayList<String> getSequenceFiles() {
 		return sequenceFiles;
 	}

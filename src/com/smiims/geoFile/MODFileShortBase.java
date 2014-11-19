@@ -11,15 +11,15 @@ abstract public class MODFileShortBase extends MODFileBase<GeoShort> {
 	public short data[];
 	abstract short[] readData(int width, int height, int bandNO);
 	@Override
-	public GeoShort[] getData(int startx, int starty, int offsetX, int offsetY,
+	public GeoShort[] getData(int startx, int starty, int offsetx, int offsety,
 			int bandNO) {
 		if(data==null){
 			return null;
 		}
-		GeoShort sData[]=new GeoShort[offsetX*offsetY];
+		GeoShort sData[]=new GeoShort[offsetx*offsety];
 		int idx;
-		for(int i=0;i<offsetX;i++){
-			for(int j=0;j<offsetY;j++){
+		for(int i=0;i<offsetx;i++){
+			for(int j=0;j<offsety;j++){
 				idx=(startx+i)+(starty+j)*width;
 				sData[idx]=new GeoShort(startx+i,starty+j,data[idx]);
 			}

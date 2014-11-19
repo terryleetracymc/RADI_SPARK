@@ -11,6 +11,9 @@ abstract public class RSTimeSeriesShortBase extends RSTimeSeriesBase<GeoShort> {
 	// 一次只能处理一个维度的数据
 	GeoShort[] d1Data;
 
+	abstract public int readData(int rank, int startx, int starty, int offsetx,
+			int offsety);
+
 	@Override
 	public JavaRDD<GeoShort> data1DDirectlyToJSC(JavaSparkContext jsc,
 			int startx, int starty, int offsetx, int offsety) {
@@ -23,7 +26,7 @@ abstract public class RSTimeSeriesShortBase extends RSTimeSeriesBase<GeoShort> {
 
 	@Override
 	public JavaRDD<GeoShort>[] dataDirectlyToJSC(JavaSparkContext jsc,
-			int startx, int starty, int offsetx, int offsety) {
+			int startx, int starty, int offsetx, int offsety, int rank) {
 		return null;
 	}
 }
